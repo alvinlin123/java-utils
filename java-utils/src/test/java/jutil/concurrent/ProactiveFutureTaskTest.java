@@ -1,4 +1,4 @@
-package alvin.concurrent;
+package jutil.concurrent;
 
 import static org.junit.Assert.*;
 

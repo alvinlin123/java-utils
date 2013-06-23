@@ -1,4 +1,4 @@
-package alvin.utils;
+package jutil.properties;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
