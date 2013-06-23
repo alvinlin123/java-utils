@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import jutil.concurrent.ProactiveFutureTask;
+
 import org.junit.Test;
 
 public class ProactiveFutureTaskTest {

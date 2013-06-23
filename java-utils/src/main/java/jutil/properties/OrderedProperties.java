@@ -1,4 +1,4 @@
-package alvin.utils;
+package jutil.properties;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -10,9 +10,10 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Set;
 
+import jutil.properties.OrderedProperties;
+
 import org.junit.Test;
 
-import alvin.utils.OrderedProperties;
 
 public class OrderedPropertiesTest {
 
