@@ -101,7 +101,7 @@
 
 	<scm>
 		<connection>scm:git:https://github.com/alvinlin123/java-utils.git</connection>
-		<developerConnection>scm:git:git@github.com:alvinlin123/java-utils.git</developerConnection>
+		<developerConnection>scm:https://github.com/alvinlin123/java-utils.git</developerConnection>
 		<url>https://github.com/alvinlin123/java-utils</url>
 		<tag>HEAD</tag>
 	</scm>
