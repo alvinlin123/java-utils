@@ -1,9 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>alvin.java</groupId>
+	<groupId>com.nappingcoder</groupId>
 	<artifactId>java-utils</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Java Utils</name>
+	<inceptionYear>2013</inceptionYear>
+	<organization>
+		<name>Alvin Lin</name>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<build>
 		<plugins>
@@ -15,6 +25,43 @@
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>1.5</version>
+				<configuration>
+					<verbose>false</verbose>
+					<addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+				</configuration>
+				<executions>
+					<execution>
+						<id>update-copyright-header</id>
+						<goals>
+							<goal>update-file-header</goal>
+						</goals>
+						<phase>process-sources</phase>
+						<configuration>
+							<licenseName>apache_v2</licenseName>
+							<roots>
+								<root>src/main/java</root>
+								<root>src/test/java</root>
+							</roots>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -32,4 +79,37 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>sonatype-snapshot</id>
+			<name>Sonatype Snapshot Repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</snapshotRepository>
+		<repository>
+			<id>sonatype-release</id>
+			<name>Sonatype Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</distributionManagement>
+
+	<developers>
+		<developer>
+			<id>alvinlin123@gmail.com</id>
+			<name>Alvin Lin</name>
+			<email>alvinlin123@gmail.com</email>
+		</developer>
+	</developers>
 </project>
