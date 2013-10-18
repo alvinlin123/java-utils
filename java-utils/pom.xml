@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.nappingcoder</groupId>
 	<artifactId>java-utils</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 
 	<name>Java Utils</name>
 	<inceptionYear>2013</inceptionYear>
@@ -135,7 +135,7 @@
 		<connection>scm:git:https://github.com/alvinlin123/java-utils.git</connection>
 		<developerConnection>scm:git:https://github.com/alvinlin123/java-utils.git</developerConnection>
 		<url>https://github.com/alvinlin123/java-utils</url>
-		<tag>v0.0.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
