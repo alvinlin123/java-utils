@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package jutil.properties;
+package com.nappingcoder.jutil.properties;
 
 import java.util.ArrayList;
 import java.util.Collection;

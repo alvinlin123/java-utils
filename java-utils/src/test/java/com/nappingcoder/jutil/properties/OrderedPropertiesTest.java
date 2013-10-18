@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package jutil.properties;
+package com.nappingcoder.jutil.properties;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -29,9 +29,10 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Set;
 
-import jutil.properties.OrderedProperties;
 
 import org.junit.Test;
+
+import com.nappingcoder.jutil.properties.OrderedProperties;
 
 
 public class OrderedPropertiesTest {

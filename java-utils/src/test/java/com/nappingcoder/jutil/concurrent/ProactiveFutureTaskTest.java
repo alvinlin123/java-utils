@@ -17,16 +17,17 @@
  * limitations under the License.
  * #L%
  */
-package jutil.concurrent;
+package com.nappingcoder.jutil.concurrent;
 
 import static org.junit.Assert.*;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import jutil.concurrent.ProactiveFutureTask;
 
 import org.junit.Test;
+
+import com.nappingcoder.jutil.concurrent.ProactiveFutureTask;
 
 public class ProactiveFutureTaskTest {
 	

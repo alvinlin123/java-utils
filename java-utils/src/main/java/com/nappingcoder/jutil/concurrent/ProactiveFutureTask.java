@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package jutil.concurrent;
+package com.nappingcoder.jutil.concurrent;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;

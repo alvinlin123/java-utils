@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package http.url.utils;
+package com.nappingcoder.jutil.http;
 
 public class HttpUrlBuilderException extends Exception {
 	

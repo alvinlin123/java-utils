@@ -17,15 +17,16 @@
  * limitations under the License.
  * #L%
  */
-package http.url.utils;
+package com.nappingcoder.jutil.http;
 import static org.junit.Assert.assertEquals;
 
-import http.url.utils.HttpUrlBuilder;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.junit.Test;
+
+import com.nappingcoder.jutil.http.HttpUrlBuilder;
 
 
 public class HttpUrlBuilderTest {
