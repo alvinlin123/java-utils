@@ -26,11 +26,18 @@ import java.util.Set;
 import org.apache.commons.codec.net.URLCodec;
 
 /**
+ * <p>
  * This builder is stingy, it will not include character that is
  * not required. For example, instead of http://www.ea.com/ this
  * builder will produce http://www.ea.com.
- * 
- * 
+ * </p>
+ * <br/>
+ * <p>
+ *  Make a call to either {@link #toString()} or {@link #toUrlString()} after setting
+ *  desired properties to construct the HTTP URL string. At minimal, host must be 
+ *  given. If attempt to construct the HTTP URL string before setting the host name, 
+ *  @link {@link IllegalStateException} is thrown.
+ * </p>
  * @author alvinlin
  *
  */
@@ -40,7 +47,7 @@ public final class HttpUrlBuilder {
 	
 	private StringBuilder _query = new StringBuilder();
 	private StringBuilder _path = new StringBuilder();
-	private URLCodec codec = new URLCodec();
+	private URLCodec _codec = new URLCodec();
 	private String _protocol;
 	private String _host = "";
 	private int _port;
@@ -125,7 +132,7 @@ public final class HttpUrlBuilder {
 			}
 			
 			try {
-				_path.append(codec.encode(elt, CHAR_SET)).append("/");
+				_path.append(_codec.encode(elt, CHAR_SET)).append("/");
 			} catch (UnsupportedEncodingException e) {
 				throw new HttpUrlBuilderException("unsupported char set (you really shouldn't see this though..)", e);
 			}
@@ -138,7 +145,7 @@ public final class HttpUrlBuilder {
 			throws HttpUrlBuilderException {
 		
 		try {
-			_path.append(codec.encode(element, CHAR_SET)).append("/");
+			_path.append(_codec.encode(element, CHAR_SET)).append("/");
 		} catch (UnsupportedEncodingException e) {
 			throw new HttpUrlBuilderException("unsupported char set (you really shouldn't see this though..)", e);
 		}
@@ -158,7 +165,7 @@ public final class HttpUrlBuilder {
 	throws HttpUrlBuilderException {
 		
 		try {
-			_query.append(codec.encode(name, CHAR_SET)).append("=").append(codec.encode(value, CHAR_SET)).append("&");
+			_query.append(_codec.encode(name, CHAR_SET)).append("=").append(_codec.encode(value, CHAR_SET)).append("&");
 		} catch (UnsupportedEncodingException e) {
 			//really shouln't get here though....
 			throw new HttpUrlBuilderException("unsupported char set (you really shouldn't see this though...)", e);
@@ -194,25 +201,27 @@ public final class HttpUrlBuilder {
 	}
 	
 	/**
+	 * Same as {@link #toString()}
 	 *
 	 * @return
 	 * @throws IllegalStateException
 	 */
 	public String toUrlString() {
 		
-		if (_host==null) {
-			throw new IllegalArgumentException("host must be set ");
-		}
 		
 		return toString();
 	}
 	
 	/**
-	 *
+	 * 
+	 * Build a new HTTP URL string.
+	 *  
 	 * @return
 	 * @throws IllegalStateException
 	 */
 	public String toString() {
+		
+		verifyState();
 		
 		StringBuilder url = new StringBuilder();
 		
@@ -241,5 +250,12 @@ public final class HttpUrlBuilder {
 		}
 		
 		return url.toString();
+	}
+	
+	private void verifyState() {
+		
+		if (_host==null) {
+			throw new IllegalStateException("host must be set ");
+		}
 	}
 }
