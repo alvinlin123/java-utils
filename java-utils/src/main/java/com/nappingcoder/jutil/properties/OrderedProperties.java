@@ -30,10 +30,10 @@ import java.util.Set;
 
 /**
  * 
- * An extension of java.util.Properties class. Unlik Properties clas,s 
- * this will remembers the order properties were added in. Methods like
+ * An extension of java.util.Properties class. Unlike {@link Properties} class,
+ * this will remember the order properties were added in. Methods like
  * {@link #propertyNames()} will return property names in order they 
- * were added.
+ * were added (or as appeared in your properties file).
  *
  */
 public class OrderedProperties extends Properties {
